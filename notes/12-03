@@ -1,0 +1,66 @@
+1. under src create following folders
+    create
+        components
+        reducers
+        store
+        actions
+
+2. install redux npm instal --save redux
+
+3. under store folder
+    create a new file configureStore.js
+
+    import { createStore, combineReducers } from 'redux'
+
+const configureStore = () =>{
+    const store = createStore(combineReducers({
+
+    }))
+
+    return store
+}
+
+export default configureStore
+
+
+4. in index.js (main file, setup store)
+import configureStore from './store/configureStore'
+
+5. inside reducers create   
+    projects.js
+
+    const projectsInitialState = []
+const projectsReducer = (state = projectsInitialState,action)=>{
+
+}
+
+export default projectsReducer
+
+6. inside store/configureStore.js
+        import 
+
+7. allowing crud on projectsReducer
+
+8. setup actio generators on action-project.js
+
+export const addProject = (project)=>{
+    return {
+        type: 'ADD_PROJECT',
+        project
+    }
+}
+
+export const editProject = (project, id)=>{
+    return {
+        type: 'EDIT_PROJECT',
+        id: id,
+        project: project,
+    }
+}
+
+export const removeProject = (id)=>{
+    return {
+        type: 'REMOVE_PROJECT',
+        id
+    }
+}
